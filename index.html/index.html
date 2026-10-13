@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f8eee8">
+    <meta name="description" content="Uma carta escrita com carinho para alguém especial.">
+    <title>Uma carta para você</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="page">
+      <button class="envelope" type="button" aria-controls="love-letter" aria-expanded="false">
+        <span class="envelope__body" aria-hidden="true"></span>
+        <span class="envelope__flap" aria-hidden="true"></span>
+        <span class="envelope__heart" aria-hidden="true">♥</span>
+        <span class="envelope__label">Clique para abrir</span>
+      </button>
+
+      <article class="letter" id="love-letter" hidden>
+        <p class="eyebrow">Com todo o meu carinho</p>
+        <h1 id="letter-title" tabindex="-1">Uma carta para você</h1>
+        <div class="divider" aria-hidden="true"><span>♥</span></div>
+
+        <div class="message">
+          <p>Meu amor, Izabel Paola Cunha Loureiro</p>
+          <p>
+            Às vezes, eu queria encontrar palavras grandes o bastante para
+            explicar o que sinto por você. Mas talvez o mais bonito seja
+            justamente isso: meu amor aparece nas coisas simples, em cada
+            sorriso seu que fica comigo e em cada instante em que estar ao
+            seu lado faz tudo parecer mais leve.
+          </p>
+          <p>
+            Obrigado por ser essa presença tão especial na minha vida. Gosto
+            do seu jeito, das nossas conversas, dos nossos silêncios e de
+            todas as pequenas lembranças que vamos construindo juntos.
+          </p>
+          <p>
+            Quero continuar escolhendo você — nos dias extraordinários e
+            também nos dias comuns, que ficam extraordinários só porque são
+            compartilhados com você.
+          </p>
+          <p>
+            Tem algo muito bonito em dividir a vida com você: até os momentos
+            mais simples ganham um brilho diferente. Uma conversa sem pressa,
+            um abraço demorado, um sorriso trocado no meio do dia — tudo vira
+            lembrança boa quando você está por perto.
+          </p>
+          <p class="highlight">
+            Se existe um lugar onde meu coração se sente em casa, é ao seu lado.
+          </p>
+          <p>
+            Quero ser sua parceria nas alegrias e também nos dias difíceis,
+            celebrar cada conquista sua e lembrar você, sempre que precisar,
+            do quanto é incrível. Que nunca nos faltem carinho, respeito,
+            paciência e motivos para sorrir juntos.
+          </p>
+          <p>
+            Não sei todos os caminhos que o futuro nos reserva, mas sei que
+            gosto de imaginar cada novo capítulo com você. Obrigado por fazer
+            parte da minha história e por deixar meus dias mais bonitos
+            simplesmente sendo quem você é.
+          </p>
+          <p>Com todo o meu amor, hoje e sempre.</p>
+        </div>
+
+        <p class="signoff">Com amor Gabriel <span aria-hidden="true">♥</span></p>
+      </article>
+      <p class="footer-note" id="footer-note">Há uma surpresa esperando por você.</p>
+    </main>
+    <script>
+      const envelope = document.querySelector(".envelope");
+      const letter = document.querySelector("#love-letter");
+      const title = document.querySelector("#letter-title");
+      const footerNote = document.querySelector("#footer-note");
+
+      envelope.addEventListener("click", () => {
+        letter.hidden = false;
+        envelope.setAttribute("aria-expanded", "true");
+        envelope.hidden = true;
+        footerNote.textContent = "Feita para lembrar você do quanto é especial.";
+        title.focus();
+      });
+    </script>
+  </body>
+</html>
